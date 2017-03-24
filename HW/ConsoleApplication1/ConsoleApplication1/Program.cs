@@ -14,15 +14,13 @@ namespace ConsoleApplication1
             var musics = FindMusics();
 
             for (var j = 0; j < musics.Count; j++) {
-                Console.WriteLine("----------------");
-                Console.WriteLine(musics[j].title);
-                Console.WriteLine(musics[j].name);
-                Console.WriteLine(musics[j].startname);
-                Console.WriteLine(musics[j].endname);
-                Console.WriteLine(musics[j].price);
-                Console.WriteLine(musics[j].create);
-                Console.WriteLine("----------------");
-
+                Console.WriteLine("第"+j+"筆資料");
+                Console.WriteLine("標題："+musics[j].title);
+                Console.WriteLine("位置："+musics[j].name);
+                Console.WriteLine("開始時間："+musics[j].startname);
+                Console.WriteLine("結束時間："+musics[j].endname);
+                Console.WriteLine("價錢："+musics[j].price);
+                //Console.WriteLine("----------------");
             }
             Console.ReadLine();
 
