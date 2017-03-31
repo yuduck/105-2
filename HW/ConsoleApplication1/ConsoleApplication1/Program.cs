@@ -12,25 +12,10 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            
-               
-            
-            var musics = FindMusics();
-
-            for (var j = 0; j < musics.Count; j++) {
-                Console.WriteLine("第"+j+"筆資料");
-                Console.WriteLine("標題："+musics[j].title);
-                Console.WriteLine("位置："+musics[j].name);
-                Console.WriteLine("開始時間："+musics[j].starttime);
-                Console.WriteLine("結束時間："+musics[j].endtime);
-                Console.WriteLine("價錢："+musics[j].price);
-                //Console.WriteLine("----------------");
-            }
-            Console.WriteLine("----------------");
-            Console.WriteLine("按下任一鍵進行新增資料庫");
+            Data.Data db = new Data.Data();
+            // var musics = FindMusics();
+            ShowMusic(db);
             Console.ReadKey();
-            InsertMusic(musics);
-            Console.ReadLine();
 
         }
         public static List<music> FindMusics()
@@ -38,27 +23,28 @@ namespace ConsoleApplication1
             List<music> musics = new List<music>();
             var xml = XElement.Load(@"D:\105-2\HW\music.xml");
             var musictitle = xml.Descendants("Info").ToList();
-            for (var i = 0; i < musictitle.Count(); i++) {
+            for (var i = 0; i < musictitle.Count(); i++)
+            {
                 //musictitle[i]
 
                 var musicNode = musictitle[i];
             }
             musictitle.Where(x => !x.IsEmpty).ToList().ForEach(musicNode =>
-              {
-                  var title = musicNode.Attribute("title").Value.Trim();
-                  var price= musicNode.Element("showInfo").Element("element").Attribute("price").Value.Trim();
-                  var name = musicNode.Element("showInfo").Element("element").Attribute("locationName").Value.Trim();
-                  var starttime = musicNode.Element("showInfo").Element("element").Attribute("time").Value.Trim();
-                  var endtime = musicNode.Element("showInfo").Element("element").Attribute("endTime").Value.Trim();
-                  music musicData = new music();
-                  musicData.title = title;
-                  musicData.price = price;
-                  musicData.name = name;
-                  musicData.starttime = starttime;
-                  musicData.endtime = endtime;
-                  musicData.create = DateTime.Now;
-                  musics.Add(musicData);
-              });
+            {
+                var title = musicNode.Attribute("title").Value.Trim();
+                var price = musicNode.Element("showInfo").Element("element").Attribute("price").Value.Trim();
+                var name = musicNode.Element("showInfo").Element("element").Attribute("locationName").Value.Trim();
+                var starttime = musicNode.Element("showInfo").Element("element").Attribute("time").Value.Trim();
+                var endtime = musicNode.Element("showInfo").Element("element").Attribute("endTime").Value.Trim();
+                music musicData = new music();
+                musicData.title = title;
+                musicData.price = price;
+                musicData.name = name;
+                musicData.starttime = starttime;
+                musicData.endtime = endtime;
+                musicData.create = DateTime.Now;
+                musics.Add(musicData);
+            });
             return musics;
 
         }
@@ -67,7 +53,7 @@ namespace ConsoleApplication1
             Data.Data db = new Data.Data();
 
 
-            Console.WriteLine(string.Format("新增{0}筆監測站的資料開始", musics.Count));
+            Console.WriteLine(string.Format("新增{0}筆音樂表演的資料開始", musics.Count));
             musics.ForEach(x =>
             {
 
@@ -76,8 +62,24 @@ namespace ConsoleApplication1
 
             });
             Console.WriteLine(string.Format("新增音樂的資料結束"));
+        }
+        public static void ShowMusic(Data.Data db)
+        {
+
+            List<Models.music> musicget = new List<music>();
+            musicget = db.ReadMusic();
 
 
+            for (var j = 0; j < musicget.Count; j++)
+            {
+                Console.WriteLine("第" + j + "筆資料");
+                Console.WriteLine("標題：" + musicget[j].title);
+                Console.WriteLine("位置：" + musicget[j].name);
+                Console.WriteLine("開始時間：" + musicget[j].starttime);
+                Console.WriteLine("結束時間：" + musicget[j].endtime);
+                Console.WriteLine("價錢：" + musicget[j].price);
+                //Console.WriteLine("----------------");
+            }
         }
 
     }
