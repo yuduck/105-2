@@ -12,25 +12,10 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            
-               
-            
-            var musics = FindMusics();
-
-            for (var j = 0; j < musics.Count; j++) {
-                Console.WriteLine("第"+j+"筆資料");
-                Console.WriteLine("標題："+musics[j].title);
-                Console.WriteLine("位置："+musics[j].name);
-                Console.WriteLine("開始時間："+musics[j].starttime);
-                Console.WriteLine("結束時間："+musics[j].endtime);
-                Console.WriteLine("價錢："+musics[j].price);
-                //Console.WriteLine("----------------");
-            }
-            Console.WriteLine("----------------");
-            Console.WriteLine("按下任一鍵進行新增資料庫");
+            Data.Data db = new Data.Data();
+           // var musics = FindMusics();
+            ShowMusic(db);
             Console.ReadKey();
-            InsertMusic(musics);
-            Console.ReadLine();
 
         }
         public static List<music> FindMusics()
@@ -67,7 +52,7 @@ namespace ConsoleApplication1
             Data.Data db = new Data.Data();
 
 
-            Console.WriteLine(string.Format("新增{0}筆監測站的資料開始", musics.Count));
+            Console.WriteLine(string.Format("新增{0}筆音樂表演的資料開始", musics.Count));
             musics.ForEach(x =>
             {
 
@@ -76,8 +61,24 @@ namespace ConsoleApplication1
 
             });
             Console.WriteLine(string.Format("新增音樂的資料結束"));
+        }
+        public static void ShowMusic(Data.Data db)
+        {
+
+            List<Models.music> musicget = new List<music>();
+            musicget = db.ReadMusic();
 
 
+            for (var j = 0; j < musicget.Count; j++)
+            {
+                Console.WriteLine("第" + j + "筆資料");
+                Console.WriteLine("標題：" + musicget[j].title);
+                Console.WriteLine("位置：" + musicget[j].name);
+                Console.WriteLine("開始時間：" + musicget[j].starttime);
+                Console.WriteLine("結束時間：" + musicget[j].endtime);
+                Console.WriteLine("價錢：" + musicget[j].price);
+                //Console.WriteLine("----------------");
+            }
         }
 
     }
