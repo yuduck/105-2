@@ -30,7 +30,7 @@ namespace ConsoleApplication1
         public static List<music> FindMusics()
         {
             List<music> musics = new List<music>();
-            var xml = XElement.Load(@"D:\0317\HW\music.xml");
+            var xml = XElement.Load(@"D:\105-2\HW\music.xml");
             var musictitle = xml.Descendants("Info").ToList();
             for (var i = 0; i < musictitle.Count(); i++) {
                 //musictitle[i]

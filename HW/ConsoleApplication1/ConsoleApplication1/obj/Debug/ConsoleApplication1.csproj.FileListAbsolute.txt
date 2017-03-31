@@ -13,3 +13,6 @@ D:\0317\HW\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1
 D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
