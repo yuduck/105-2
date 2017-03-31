@@ -73,7 +73,7 @@ namespace ConsoleApplication1
 
             for (var j = 0; j < musicget.Count; j++)
             {
-                Console.WriteLine("第" + j + "筆資料");
+                Console.WriteLine("第{0}筆資料",j+1);
                 Console.WriteLine("標題：" + musicget[j].title);
                 Console.WriteLine("位置：" + musicget[j].name);
                 Console.WriteLine("開始時間：" + musicget[j].starttime);
