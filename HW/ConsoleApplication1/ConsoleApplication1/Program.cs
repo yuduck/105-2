@@ -20,7 +20,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("開始時間："+musics[j].startname);
                 Console.WriteLine("結束時間："+musics[j].endname);
                 Console.WriteLine("價錢："+musics[j].price);
-                //Console.WriteLine("----------------");
+
             }
             Console.ReadLine();
 
@@ -28,7 +28,7 @@ namespace ConsoleApplication1
         public static List<music> FindMusics()
         {
             List<music> musics = new List<music>();
-            var xml = XElement.Load(@"D:\0317\HW\music.xml");
+            var xml = XElement.Load(@"D:\105-2\HW\music.xml");
             var musictitle = xml.Descendants("Info").ToList();
             for (var i = 0; i < musictitle.Count(); i++) {
                 //musictitle[i]
