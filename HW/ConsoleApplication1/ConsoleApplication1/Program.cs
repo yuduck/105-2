@@ -14,6 +14,7 @@ namespace ConsoleApplication1
         {
             Data.Data db = new Data.Data();
             // var musics = FindMusics();
+            // InsertMusic(musics);
             ShowMusic(db);
             Console.ReadKey();
 
