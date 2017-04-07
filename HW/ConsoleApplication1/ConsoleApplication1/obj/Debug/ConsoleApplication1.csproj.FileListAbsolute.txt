@@ -18,3 +18,5 @@ D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\data\musicdata.ldf
 D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\data\musicdata.mdf
 D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\duck.dll
+D:\105-2\HW\ConsoleApplication1\ConsoleApplication1\bin\Debug\duck.pdb

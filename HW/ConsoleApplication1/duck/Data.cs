@@ -20,7 +20,7 @@ namespace Data
 
             var command = new System.Data.SqlClient.SqlCommand("", connection);
             command.CommandText = string.Format(@"
-INSERT        INTO    music(title, name, starttime, endtime, price,creat)
+INSERT        INTO    music(title, name, starttime, endtime, price,create)
 VALUES          (N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}')
 ", Music.title.Replace(@"'",@"''"), Music.name, Music.starttime, Music.endtime, Music.price, Music.create.ToString("yyyy/MM/dd"));
 
@@ -50,7 +50,7 @@ Select * from music");
                 item.starttime = reader["starttime"].ToString();
                 item.endtime = reader["endtime"].ToString();
                 item.price = reader["price"].ToString();
-                //item.creat = reader["creat"].ToString();
+                item.create =DateTime.Parse(reader["create"].ToString());
                 result.Add(item);
             }
 

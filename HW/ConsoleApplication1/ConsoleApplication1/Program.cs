@@ -79,6 +79,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("開始時間：" + musicget[j].starttime);
                 Console.WriteLine("結束時間：" + musicget[j].endtime);
                 Console.WriteLine("價錢：" + musicget[j].price);
+                Console.WriteLine("建立時間：" + musicget[j].create);
                 //Console.WriteLine("----------------");
             }
         }
