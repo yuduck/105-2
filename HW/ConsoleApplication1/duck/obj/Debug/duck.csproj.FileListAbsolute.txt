@@ -1,0 +1,5 @@
+D:\105-2\HW\ConsoleApplication1\duck\bin\Debug\duck.dll
+D:\105-2\HW\ConsoleApplication1\duck\bin\Debug\duck.pdb
+D:\105-2\HW\ConsoleApplication1\duck\obj\Debug\duck.csprojResolveAssemblyReference.cache
+D:\105-2\HW\ConsoleApplication1\duck\obj\Debug\duck.dll
+D:\105-2\HW\ConsoleApplication1\duck\obj\Debug\duck.pdb

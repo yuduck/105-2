@@ -1,0 +1,63 @@
+﻿@model List<Models.music>
+
+@{
+    Layout = "";
+    var UserName = ViewBag.UserName;
+    var Musics = Model;//ViewBag.Stations;
+
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@UserName</h1>
+    <ul>
+        @for (var i = 0; i < Musics.Count; i++)
+        {
+            <li>
+                標題：@(Model[i].title)<br />
+                位置：@Model[i].name<br />
+                開始時間：@Model[i].starttime<br />
+                結束時間：@Model[i].endtime<br />
+                價錢：@Model[i].price<br />
+            </li>
+
+        }
+
+    </ul>
+
+    @*<table style="width:100%;border:1px solid red;">
+        <thead>
+            <tr>
+                <th style="border:1px solid red;">Firstname</th>
+                <th style="border:1px solid red;">Lastname</th>
+                <th style="border:1px solid red;">Age</th>
+            </tr>
+        </thead>
+        <tbody style="border:1px solid red;">
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">(@UserName) 共幾筆資料</td>
+            </tr>
+        </tfoot>
+    </table>*@
+</body>
+</html>
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
